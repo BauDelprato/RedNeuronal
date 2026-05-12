@@ -47,34 +47,58 @@
                               <Component id="jtfFactor" min="-2" pref="71" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="2" attributes="0">
                           <Component id="jLabel1" alignment="2" min="-2" pref="64" max="-2" attributes="0"/>
                           <Component id="jlbSalidaDeseada" alignment="2" min="-2" max="-2" attributes="0"/>
                           <Component id="jlbPeso1" alignment="2" min="-2" max="-2" attributes="0"/>
                           <Component id="jlbEntrada1" alignment="2" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtfEntrada1" alignment="2" min="-2" pref="91" max="-2" attributes="0"/>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jtfEntrada1" min="-2" pref="91" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="jlbEntrada2" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jlbPeso2" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jlbSalidaObtenida" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jlbEstado" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel3" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jtfEntrada2" min="-2" pref="91" max="-2" attributes="0"/>
-                  <Component id="jLabel2" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="panelGrafico" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="jlbEntrada2" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlbPeso2" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlbSalidaObtenida" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlbEstado" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="panelGrafico" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel7" alignment="2" min="-2" pref="64" max="-2" attributes="0"/>
+                          <Component id="jtfEntrada3" alignment="2" min="-2" pref="91" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="2" attributes="0">
+                              <Component id="jtfEntrada2" min="-2" pref="91" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jtfEntrada4" min="-2" pref="91" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
               </Group>
-              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
                   <Component id="jLabel4" alignment="2" min="-2" max="-2" attributes="0"/>
                   <Component id="jlbUmbral" alignment="2" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel5" alignment="2" min="-2" pref="132" max="-2" attributes="0"/>
                   <Component id="jlbSalidaPrueba" alignment="2" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="112" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="14" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -86,56 +110,79 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jlbEntrada1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlbEntrada2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jlbPeso1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlbPeso2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlbUmbral" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jlbSalidaDeseada" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlbSalidaObtenida" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="btnEntrenamiento" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnAprendizaje" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-              <Component id="btnAutoEntrenar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnPrueba" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="jtfEntrada2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jlbSalidaPrueba" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jlbEntrada1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jlbEntrada2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jlbPeso1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jlbPeso2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jlbSalidaDeseada" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jlbSalidaObtenida" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Component id="jtfEntrada1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="btnEntrenamiento" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnAprendizaje" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <Component id="btnAutoEntrenar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="btnPrueba" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jtfEntrada2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jtfEntrada1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jtfFactor" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel8" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                                  <Component id="jLabel7" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jtfEntrada4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jtfEntrada3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
-              </Group>
-              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jtfFactor" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <Component id="jlbUmbral" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="jlbSalidaPrueba" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
@@ -147,7 +194,7 @@
                       <Component id="btnReset" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="207" max="32767" attributes="0"/>
+              <EmptySpace pref="148" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -156,6 +203,7 @@
     <Component class="javax.swing.JButton" name="btnEntrenamiento">
       <Properties>
         <Property name="text" type="java.lang.String" value="Entrenamiento"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -164,6 +212,7 @@
     <Component class="javax.swing.JButton" name="btnAprendizaje">
       <Properties>
         <Property name="text" type="java.lang.String" value="Aprendizaje"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -303,7 +352,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Factor Aprendizaje:: 0.6"/>
+        <Property name="text" type="java.lang.String" value="Factor Aprendizaje: 0.6"/>
         <Property name="horizontalTextPosition" type="int" value="0"/>
       </Properties>
     </Component>
@@ -353,6 +402,32 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Factor de Aprendizaje:"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel7">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Entrada 3: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtfEntrada3">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel8">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Entrada 4:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtfEntrada4">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

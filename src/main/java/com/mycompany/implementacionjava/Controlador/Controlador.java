@@ -7,6 +7,7 @@ import static javax.swing.JOptionPane.showMessageDialog;
 import com.mycompany.implementacionjava.Vista.Ventana;
 import com.mycompany.implementacionjava.Modelo.Grafico;
 import com.mycompany.implementacionjava.Modelo.PerceptronSimpleAND;
+import com.mycompany.implementacionjava.Modelo.RedNeuronal;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import org.jfree.chart.ChartPanel;
@@ -19,11 +20,14 @@ public class Controlador implements ActionListener {
     private ChartPanel chartPanel;
     private ChartPanel chartPanel2;
     private PerceptronSimpleAND perceptronSimpleAND;
+    private RedNeuronal redNeuronal;
+    private float factorAprendizaje = 0.6f;
 
-    public Controlador(Ventana view, Grafico grafico, PerceptronSimpleAND perceptronSimpleAND) {
+    public Controlador(Ventana view, Grafico grafico, /*PerceptronSimpleAND perceptronSimpleAND*/ RedNeuronal redNeuronal ) {
         this.view = view;
         this.grafico = grafico;
-        this.perceptronSimpleAND = perceptronSimpleAND;
+      //this.perceptronSimpleAND = perceptronSimpleAND;
+        this.redNeuronal = redNeuronal;
         this.view.btnEntrenamiento.addActionListener(this);
         this.view.btnAprendizaje.addActionListener(this);
         this.view.btnAutoEntrenar.addActionListener(this);
@@ -118,70 +122,53 @@ public class Controlador implements ActionListener {
         }
 
         if (e.getSource() == view.btnAutoEntrenar) {
-
+            float factorAprendizaje = 0.6f;
             try {
-                float nuevoFactor = Float.parseFloat(view.jtfFactor.getText());
-                if (nuevoFactor <= 0) {
+                factorAprendizaje = Float.parseFloat(view.jtfFactor.getText());
+                if (factorAprendizaje <= 0) {
                     showMessageDialog(null, "El factor debe ser mayor a 0");
                     return;
                 }
-                perceptronSimpleAND.setFactorAprendizaje(nuevoFactor);
             } catch (Exception ex) {
-                showMessageDialog(null, "Factor inválido");
+                showMessageDialog(null, "Factor inválido. Revisá la caja de texto.");
                 return;
             }
 
-            int maxEpocas = 10000;
-            int epocaActual = 0;
+            // base de datos de ejemplo: {x1, x2, x3, x4, salidaEsperada}
+            float[][] trainingData = {
+                {1, 1, 0, 0, 1}, // Ejemplo: síntomas presentes -> enfermo (1)
+                {0, 0, 1, 1, 0}, // Ejemplo: otros síntomas -> sano (0)
+                {1, 0, 1, 0, 0.5f}
+            };
 
-            while (perceptronSimpleAND.getFila() < 4 && epocaActual < maxEpocas) {
-                perceptronSimpleAND.Entrenamiento();
+            int maxEpocas = 10000; //límite de 10000 repeticiones
 
-                if (perceptronSimpleAND.getError() != 0f) {
-                    perceptronSimpleAND.Aprendizaje();
+            //backpropagation
+            for (int epoca = 0; epoca < maxEpocas; epoca++) {
+                for (float[] fila : trainingData) {
+                    redNeuronal.entrenar(fila[0], fila[1], fila[2], fila[3], fila[4], factorAprendizaje);
                 }
-                epocaActual++;
             }
+            view.jlbEstado.setText("AUTO-ENTRENAMIENTO COMPLETADO (" + maxEpocas + " épocas)");
+            showMessageDialog(null, "¡Red Neuronal Entrenada exitosamente!");
 
-            if (perceptronSimpleAND.getFila() == 4) {
-                view.jlbEstado.setText("AUTO-ENTRENAMIENTO COMPLETADO en " + epocaActual + " pasos");
-            } else {
-                view.jlbEstado.setText("AUTO-ENTRENAMIENTO FALLIDO");
-            }
-
-            view.jlbPeso1.setText("Peso 1: " + Float.toString(perceptronSimpleAND.getW1()));
-            view.jlbPeso2.setText("Peso 2: " + Float.toString(perceptronSimpleAND.getW2()));
-            view.jlbUmbral.setText("Umbral: " + Float.toString(perceptronSimpleAND.getW0()));
-
-            float X1 = -2;
-            float Y1 = (-perceptronSimpleAND.getW0() - perceptronSimpleAND.getW1() * X1) / perceptronSimpleAND.getW2();
-            float X2 = 2;
-            float Y2 = (-perceptronSimpleAND.getW0() - perceptronSimpleAND.getW1() * X2) / perceptronSimpleAND.getW2();
-
-            graficoConRecta = new Grafico(Y1, Y2, X1, X2, perceptronSimpleAND.getRepeticion());
-            chartPanel2 = graficoConRecta.getChartPanel();
-            chartPanel2.setPreferredSize(new Dimension(400, 400));
-            view.panelGrafico.removeAll();
-            view.panelGrafico.add(chartPanel2, BorderLayout.CENTER);
-            view.panelGrafico.validate();
         }
 
         if (e.getSource() == view.btnPrueba) {
+    try {
+        float x1 = Float.parseFloat(view.jtfEntrada1.getText());
+        float x2 = Float.parseFloat(view.jtfEntrada2.getText());
+        float x3 = Float.parseFloat(view.jtfEntrada3.getText());
+        float x4 = Float.parseFloat(view.jtfEntrada4.getText());
 
-            String Entrada1 = view.jtfEntrada1.getText();
-            String Entrada2 = view.jtfEntrada2.getText();
-            boolean bandera = false;
-
-            if ((((Entrada1.compareTo("1")) != 0) && ((Entrada1.compareTo("-1")) != 0)) || (((Entrada2.compareTo("1")) != 0) && ((Entrada2.compareTo("-1")) != 0))) {
-                showMessageDialog(null, "ERROR. Solamente se aceptan valores 1 o -1");
-                bandera = true;
-            }
-
-            if (bandera == false) {
-                float y = perceptronSimpleAND.PruebaFuncionamiento(Integer.parseInt(Entrada1), Integer.parseInt(Entrada2));
-                view.jlbSalidaPrueba.setText("Salida Obtenida: " + Float.toString(y));
-            }
-        }
+        float resultado = redNeuronal.predecir(x1, x2, x3, x4);
+        
+        view.jlbSalidaPrueba.setText("Predicción: " + String.format("%.2f", resultado));
+        
+    } catch (Exception ex) {
+        showMessageDialog(null, "Por favor, completa las 4 entradas con números.");
+    }
+}
 
         if (e.getSource() == view.btnReset) {
 
