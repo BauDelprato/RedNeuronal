@@ -1,25 +1,28 @@
 package com.mycompany.implementacionjava;
 
+import javax.swing.JFrame;
+
 import com.mycompany.implementacionjava.Controlador.Controlador;
 import com.mycompany.implementacionjava.Modelo.RedNeuronal;
-import com.mycompany.implementacionjava.Vista.Ventana;
-import com.mycompany.implementacionjava.Modelo.Grafico;
-import com.mycompany.implementacionjava.Modelo.PerceptronSimpleAND;
+import com.mycompany.implementacionjava.Vista.Pantalla;
 
 public class ImplementacionJava {
 
     public static void main(String[] args) {
-        
-        Ventana view = new Ventana();
-        Grafico grafico = new Grafico();
-        //PerceptronSimpleAND perceptronSimpleAND = new PerceptronSimpleAND();
-        RedNeuronal red = new RedNeuronal();
-        Controlador ctrl = new Controlador(view, grafico, red);
-        
-        ctrl.iniciar();
-        view.setVisible(true);
-        
-    }
-    
-}
 
+        Pantalla vista = new Pantalla();
+        RedNeuronal red = new RedNeuronal();
+
+        Controlador controlador = new Controlador(vista, red);
+
+        JFrame frame = new JFrame("Diagnóstico Médico - Red Neuronal");
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setContentPane(vista);
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+
+        controlador.iniciar();
+    }
+}
